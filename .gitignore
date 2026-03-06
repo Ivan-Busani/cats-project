@@ -1,0 +1,18 @@
+# Environment and secrets (never commit)
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE (optional: remove if you want to share)
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python
+.venv/
+__pycache__/
