@@ -1,0 +1,12 @@
+[submodule "cats-go-api"]
+	path = cats-go-api
+	url = https://github.com/Ivan-Busani/cats-go-api.git
+[submodule "cats-java-api"]
+	path = cats-java-api
+	url = https://github.com/Ivan-Busani/cats-java-api.git
+[submodule "cats-python-api"]
+	path = cats-python-api
+	url = https://github.com/Ivan-Busani/cats-python-api.git
+[submodule "cats-web-app"]
+	path = cats-web-app
+	url = https://github.com/Ivan-Busani/cats-web-app.git
