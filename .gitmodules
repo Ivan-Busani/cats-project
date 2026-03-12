@@ -13,3 +13,6 @@
 [submodule "cats-android-app"]
 	path = cats-android-app
 	url = https://github.com/Ivan-Busani/cats-android-app.git
+[submodule "cats-node-api"]
+	path = cats-node-api
+	url = https://github.com/Ivan-Busani/cats-node-api.git
