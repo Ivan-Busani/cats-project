@@ -10,3 +10,6 @@
 [submodule "cats-web-app"]
 	path = cats-web-app
 	url = https://github.com/Ivan-Busani/cats-web-app.git
+[submodule "cats-android-app"]
+	path = cats-android-app
+	url = https://github.com/Ivan-Busani/cats-android-app.git
