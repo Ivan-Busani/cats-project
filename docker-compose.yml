@@ -1,25 +1,11 @@
 name: cats-project
 
 services:
-  cats_python_api:
-    build: ./cats-python-api
-    container_name: cats-python-api
-    ports:
-      - "9003:8000"
-    env_file:
-      - ./.env
-    depends_on:
-      cats_database:
-        condition: service_healthy
-    volumes:
-      - ./cats-python-api:/app
-    command: python manage.py runserver 0.0.0.0:8000
-
   cats_go_api:
     build: ./cats-go-api
     container_name: cats-go-api
     ports:
-      - "9001:8080"
+      - "8001:8001"
     env_file:
       - ./.env
     depends_on:
@@ -30,12 +16,37 @@ services:
     build: ./cats-java-api
     container_name: cats-java-api
     ports:
-      - "9002:8081"
+      - "8002:8002"
     env_file:
       - ./.env
     depends_on:
       cats_database:
         condition: service_healthy
+
+  cats_node_api:
+    build: ./cats-node-api
+    container_name: cats-node-api
+    ports:
+      - "8003:8003"
+    env_file:
+      - ./.env
+    depends_on:
+      cats_database:
+        condition: service_healthy
+
+  cats_python_api:
+    build: ./cats-python-api
+    container_name: cats-python-api
+    ports:
+      - "8004:8004"
+    env_file:
+      - ./.env
+    depends_on:
+      cats_database:
+        condition: service_healthy
+    volumes:
+      - ./cats-python-api:/app
+    command: python manage.py runserver 0.0.0.0:8004
 
   cats_database:
     image: postgres:15
