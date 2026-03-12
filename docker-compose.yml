@@ -9,7 +9,8 @@ services:
     env_file:
       - ./.env
     depends_on:
-      - cats_database
+      cats_database:
+        condition: service_healthy
     volumes:
       - ./cats-python-api:/app
     command: python manage.py runserver 0.0.0.0:8000
@@ -22,7 +23,8 @@ services:
     env_file:
       - ./.env
     depends_on:
-      - cats_database
+      cats_database:
+        condition: service_healthy
 
   cats_java_api:
     build: ./cats-java-api
@@ -32,7 +34,8 @@ services:
     env_file:
       - ./.env
     depends_on:
-      - cats_database
+      cats_database:
+        condition: service_healthy
 
   cats_database:
     image: postgres:15
@@ -43,6 +46,11 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
 volumes:
   postgres_data:
