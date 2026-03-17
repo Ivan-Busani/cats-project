@@ -16,3 +16,6 @@
 [submodule "cats-node-api"]
 	path = cats-node-api
 	url = https://github.com/Ivan-Busani/cats-node-api.git
+[submodule "cats-kotlin-api"]
+	path = cats-kotlin-api
+	url = https://github.com/Ivan-Busani/cats-kotlin-api.git
