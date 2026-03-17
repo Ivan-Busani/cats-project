@@ -48,6 +48,17 @@ services:
       - ./cats-python-api:/app
     command: python manage.py runserver 0.0.0.0:8004
 
+  cats_kotlin_api:
+    build: ./cats-kotlin-api
+    container_name: cats-kotlin-api
+    ports:
+      - "8005:8005"
+    env_file:
+      - ./.env
+    depends_on:
+      cats_database:
+        condition: service_healthy
+
   cats_database:
     image: postgres:15
     container_name: cats-database
